@@ -1,4 +1,23 @@
 /* app css stylesheet */
+.logo {
+	display: block;
+    margin: 0 auto;
+}
+.slogan {
+	text-align: center;
+}
+
+.teacherProfileHeader {
+	border: 5px solid red;
+	height: 100px;
+	width: 100%;
+
+}
+.teacherProfilePic {
+	border: 1px solid red;
+	border-radius: 80%;
+}
+
 body {
   padding-top: 50px;
   padding-bottom: 20px;
