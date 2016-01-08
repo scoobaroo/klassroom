@@ -1,39 +1,77 @@
 /* app css stylesheet */
-.logo {
-	/*display: block;
-    margin: 0 auto;*/
-}
-.slogan {
-	/*text-align: center;*/
-}
 
-
-.teacherProfileHeader {
-	border: 1px solid grey;
-	height: 200px;
-	width: 100ev;
-	background-color: MediumOrchid;
-}
-.teacherProfilePic {
-	border: 1px solid grey;
-	border-radius: 80%;
-	width: 75px;
-	height: 100px;
-	background-color: white;
-}
-
-.addNewClass {
-	height: 100px;
-	width: 80px;
-	margin: 20px;
-	background-color: rgb(168,168,168); 
-	border-radius: 20%;
-}
-/*
 body {
-  padding-top: 50px;
-  padding-bottom: 20px;
-}*/
+	
+}
+
+.white-color {
+	color: 	#fff !important;
+}
+
+.brand-color {
+	color: 	#1CAA98 !important;
+}
+
+.button-color {
+	color: #33a6cc
+}
+
+.slogan {
+	margin: 130px 40px 20px 0;
+	font-weight: 700;
+	text-align: center;
+}
+
+p.sub-slogan {
+	margin: 0 -5px -20px -5px;
+	text-align: center;
+}
+
+p.sub-slogan-2 {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 120%;
+	font-weight: 1000;
+}
+
+.btn-primary {
+	border-radius: 24px;
+    background: -moz-linear-gradient(top,  #33a6cc 50%, #0099cc 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#33a6cc), color-stop(50%,#0099cc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #33a6cc 50%,#0099cc 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33a6cc', endColorstr='#0099cc',GradientType=0 ); /* IE6-9 */
+}
+
+.btn-default {
+	border-radius: 24px;
+}
+
+
+img.showcase-img {
+	height: 500px;
+	display: block;
+	margin: auto;
+	margin-top: 50px;
+
+}
+
+.klassroom-logic {
+	margin-top: 100px;
+}
+
+
+.footer {
+  margin-top: 20px;	
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  /*background-color: #f5f5f5;*/
+}
 
 @media(min-width: 992px) {
 	.fixed {

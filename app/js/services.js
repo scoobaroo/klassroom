@@ -5,7 +5,7 @@
 
 // Demonstrate how to register services
 // In this case it is a simple value service.
-angular.module('homeroom.services', ['ngCookies']).
+angular.module('klassroom.services', ['ngCookies']).
   value('version', '0.1').
 
   
@@ -86,7 +86,7 @@ angular.module('homeroom.services', ['ngCookies']).
 			}
 			jQuery.merge($scope.tables, pairs);
 
-			if ($scope.tables.length != $scope.nbTables) alert("Klasroom doesn't support tables of more than 4 people for now; request the feature of you need it!");
+			if ($scope.tables.length != $scope.nbTables) alert("Klassroom doesn't support tables of more than 4 people for now; request the feature of you need it!");
 		}
   	}
   }]);

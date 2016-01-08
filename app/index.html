@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us" ng-app="homeroomApp">
+<html lang="en-us" ng-app="klassroomApp">
     <head>
-        <title>Homeroom App</title>
+        <title>Klassroom App</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -14,35 +14,37 @@
     <body>
     
         <header>
-            <nav class="navbar navbar-inverse">
+            <nav class="navbar navbar-fixed-top navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#/">Homeroom</a>
+                    <a class="navbar-brand brand-color" href="#/">Klassroom</a>
                 </div>
-                <div class="collapse navbar-collapse">
+                <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                      <li><a href="#/criteria">Criteria</a></li>
-                      <li><a href="#/students">Students</a></li>
-                      <li><a href="#/generate">Generate seating</a></li>
-                      <li><a href="#/details">See details</a></li>
+                      <li><a href="#/criteria" class="white-color">Criteria</a></li>
+                      <li><a href="#/students" class="white-color">Students</a></li>
+                      <li><a href="#/generate" class="white-color">Generate seating</a></li>
+                      <li><a href="#/details" class="white-color">See details</a></li>
+                      <!-- <li><a href="#/contact" class="white-color"><span class="glyphcon glyphicon-envelope"> About</span></a></li> -->
                     </ul>
-                </div><!--/.nav-collapse -->
+                    <ul class="nav navbar-nav navbar-right">
+                       
+                        
+                    </ul>
+                </div>
             </div>
         </header>
         
-        <section id="homeroom">
-            <div class="container">
+        <section id="main">
                 <div ng-view></div>
-            </div>
         </section>
+        
 
-        <footer>
-            <div class="container">
-                <span><strong>Homeroom would like to shower you with a million 'thank you's for teaching our future</strong></span>
-                <p>Copyright &copy Marcel Degas; 2015</p>
-            </div>  
-        </footer>
-           
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Copyright &copy Marcel Degas; 2015; marcel.degas@gmail.com</p>
+          </div>
+        </footer> 
 
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('homeroom.controllers', [])
+angular.module('klassroom.controllers', [])
 	.controller('SplashController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
 		init($scope);
 		
@@ -63,4 +63,9 @@ angular.module('homeroom.controllers', [])
 	.controller('DetailsController', ['$scope', 'init', 'generateArrangement', function($scope, init, generateArrangement){
 		init($scope);
 		generateArrangement($scope);
+	}])
+
+	.controller('ContactController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
+		init($scope);
+		
 	}])
