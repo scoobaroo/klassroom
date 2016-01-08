@@ -3,6 +3,10 @@
 /* Controllers */
 
 angular.module('homeroom.controllers', [])
+	.controller('SplashController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
+		init($scope);
+		
+	}])
 	.controller('CriteriaController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
 		init($scope);
 		$scope.save = function() {
