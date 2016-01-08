@@ -1,0 +1,42 @@
+/* app css stylesheet */
+.logo {
+	/*display: block;
+    margin: 0 auto;*/
+}
+.slogan {
+	/*text-align: center;*/
+}
+
+
+.teacherProfileHeader {
+	border: 1px solid grey;
+	height: 200px;
+	width: 100ev;
+	background-color: MediumOrchid;
+}
+.teacherProfilePic {
+	border: 1px solid grey;
+	border-radius: 80%;
+	width: 75px;
+	height: 100px;
+	background-color: white;
+}
+
+.addNewClass {
+	height: 100px;
+	width: 80px;
+	margin: 20px;
+	background-color: rgb(168,168,168); 
+	border-radius: 20%;
+}
+/*
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}*/
+
+@media(min-width: 992px) {
+	.fixed {
+		position: fixed;
+	}
+}
