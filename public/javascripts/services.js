@@ -86,7 +86,7 @@ angular.module('klassroom.services', ['ngCookies']).
 			}
 			jQuery.merge($scope.tables, pairs);
 
-			if ($scope.tables.length != $scope.nbTables) alert("Klassroom doesn't support tables of more than 4 people for now; request the feature of you need it!");
+			// if ($scope.tables.length != $scope.nbTables) alert("Klassroom doesn't support tables of more than 4 people for now; request the feature of you need it!");
 		}
   	}
   }]);
