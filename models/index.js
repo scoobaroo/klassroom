@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 // adding a mongo connection
-mongoose.createConnection("mongodb://localhost/klassroom");
+mongoose.connect("mongodb://localhost/klassroom");
 
-module.exports.User = require("./user");
-module.exports.Klass = require("./klass");
+module.exports.User = require("./user.js");
+module.exports.Klass = require("./klass.js");
