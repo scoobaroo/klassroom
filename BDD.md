@@ -1,5 +1,5 @@
 Next steps
--code the front end user creation
+
 
 
 
@@ -27,5 +27,7 @@ Seating Charts Story
 -User should be able to create new seating charts for a certain class
 -User should experience some sensory tittilation when they create a new seating chart
 -User should be able to export their seating charts quickly and easily
+-User can orient the room so that they can display seating charts
+-User can display seating charts to students in a UX way
 
 
