@@ -1,7 +1,7 @@
 'use strict';
 
 
-// Declare app level module which depends on filters, and services
+// Declares an app level module which depends on filters, and services
 angular.module('klassroomApp', [
   'ngRoute',
   'klassroom.services',
