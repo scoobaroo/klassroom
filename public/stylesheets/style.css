@@ -1,7 +1,9 @@
-/* app css stylesheet */
+/*need to separate this out into different files... terrible separation of concerns!*/
+.splash-background {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/class-students.jpg") no-repeat center center fixed; 
+    height:100em;
+    width:100em;
 
-body {
-	
 }
 
 .white-color {
