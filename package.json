@@ -1,7 +1,11 @@
 {
   "name": "klassroom",
-  "version": "0.0.0",
+  "description": "an app that helps teachers find optimal seating for students",
+  "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "4.2.4"
+    },
   "scripts": {
     "start": "node ./bin/www"
   },
