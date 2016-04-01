@@ -44,6 +44,10 @@ p.sub-slogan-2 {
 	font-weight: 1000;
 }
 
+a.hover:hover { 
+    color: #f05f40 !important;
+}
+
 .btn-primary {
 	border-radius: 24px;
     background: -moz-linear-gradient(top,  #33a6cc 50%, #0099cc 50%); /* FF3.6+ */
