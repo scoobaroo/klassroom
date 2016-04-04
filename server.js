@@ -25,6 +25,13 @@ var port = process.env.PORT || 8000;
 // (uncomment after you enter in your own credentials in config/db.js)
 // mongoose.connect(db.url); 
 
+app.run(function($stormpath) {
+	$stormpath.uiRouter({
+		loginState: 'login', 
+		defaultPostLoginState: 'home'
+	});
+});
+
 app.listen(port);
 console.log('The magic is happening on ' + port);
 

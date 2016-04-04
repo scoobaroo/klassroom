@@ -1,0 +1,30 @@
+{
+  "name": "klassroom",
+  "description": "an app that helps teachers find optimal seating for students",
+  "main": "",
+  "authors": [
+    "Marcel Degas <marcel.degas@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/marceltheshell/klassroom",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "angular-cookies": "~1.4.8",
+    "angular": "~1.4.8",
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.6",
+    "bootstrap": "~3.3.6",
+    "ng-cookies": "~1.1.1",
+    "angular-loader": "~1.4.8",
+    "stormpath-sdk-angularjs": "~1.0.0"
+  }
+}
