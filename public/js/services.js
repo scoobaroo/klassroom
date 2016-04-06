@@ -9,12 +9,27 @@ angular.module('klassroom.services', ['ngCookies']).
   value('version', '0.1').
 
   
-  factory('save', ['$cookieStore', function($cookieStore){
+  factory('saveCriteria', ['$cookieStore', '$http', function($cookieStore, $http){
   	return function($scope) {
-		$cookieStore.put('c1Name', $scope.c1Name);
-		$cookieStore.put('c2Name', $scope.c2Name);
-		$cookieStore.put('c3Name', $scope.c3Name);
-		$cookieStore.put('c4Name', $scope.c4Name);
+		var data = {
+			c1Name: $scope.c1Name,
+			c2Name: $scope.c2Name,
+			c3Name: $scope.c3Name,
+			c4Name: $scope.c4Name
+  		}
+
+  		$http.post('/api/criteria', data).then(successCallback, errorCallback);
+
+  		function successCallback() {
+  			console.log("succeeded!")
+  		}
+  		function errorCallback() {
+  			console.log("FaiL!")
+  		}
+  	}	
+  }]).
+  factory('saveOtherStuff', ['$cookieStore', function($cookieStore){
+  	return function($scope) {
 		$cookieStore.put('nbTables', $scope.nbTables);
 		$cookieStore.put('students', $scope.students);
   	}
@@ -30,7 +45,7 @@ angular.module('klassroom.services', ['ngCookies']).
 		$scope.tables = [];
   	}
   }]).
-  factory('reset', ['save', function(save){
+  factory('reset', ['saveCriteria', function(save){
   	return function($scope) {
 		if(confirm("You'll have to start over; are you ok with that?")) {
 			$scope.students = [];
@@ -39,7 +54,7 @@ angular.module('klassroom.services', ['ngCookies']).
 			$scope.c3Name = '';
 			$scope.c4Name = '';
 			$scope.nbTables = '';
-			save($scope);
+			saveCriteria($scope);
 		}
   	}
   }]).

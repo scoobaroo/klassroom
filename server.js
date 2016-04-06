@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./app/routes/index');
 var app = express();
-var db = require("./config/db");
+var db = require("./models");
 
 // view engine setup
 app.set('view engine', 'ejs');
@@ -31,6 +31,20 @@ var port = process.env.PORT || 8000;
 // 		defaultPostLoginState: 'home'
 // 	});
 // });
+
+/****ROUTES***********/
+
+app.post('/api/criteria', function(req, res){
+	console.log(req.body)
+	// take the data and save it as an document (instance of that model) in the db
+	db.Criteria.create(req.body, function(err, data) {
+		if (err) {
+			console.log(err);
+		}
+		console.log(data);
+		res.sendStatus(200);
+	});
+});
 
 app.listen(port);
 console.log('The magic is happening on ' + port);

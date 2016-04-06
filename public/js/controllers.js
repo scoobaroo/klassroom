@@ -3,22 +3,22 @@
 /* Controllers */
 
 angular.module('klassroom.controllers', [])
-	.controller('SplashController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
+	.controller('SplashController', ['$scope', 'saveCriteria', 'init', 'reset', function($scope, saveCriteria, init, reset){
 	
 	}])
-	.controller('CriteriaController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
+	.controller('CriteriaController', ['$scope', 'saveCriteria', 'init', 'reset', function($scope, saveCriteria, init, reset){
 		init($scope);
-		$scope.save = function() {
-			save($scope);
+		$scope.saveCriteria = function() {
+			saveCriteria($scope);
 		}
 		$scope.reset = function() {
 			reset($scope);
 		}
 	}])
-	.controller('StudentsController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
+	.controller('StudentsController', ['$scope', 'saveCriteria', 'init', 'reset', function($scope, saveCriteria, init, reset){
 		init($scope);
 		$scope.save = function() {
-			save($scope);
+			saveCriteria($scope);
 		}
 		$scope.reset = function() {
 			reset($scope);
@@ -31,7 +31,7 @@ angular.module('klassroom.controllers', [])
 				});
 				$scope.newStudentName = '';
 			}
-			$scope.save();
+			$scope.saveCriteria();
 		}
 
 		$scope.removeStudent = function(index) {
@@ -40,11 +40,11 @@ angular.module('klassroom.controllers', [])
 			$scope.save();
 		}
 	}])
-	.controller('GenerateController', ['$scope', 'save', 'init', 'reset', 'generateArrangement', function($scope, save, init, reset, generateArrangement){
+	.controller('GenerateController', ['$scope', 'saveCriteria', 'init', 'reset', 'generateArrangement', function($scope, saveCriteria, init, reset, generateArrangement){
 		init($scope);
 		generateArrangement($scope);
 		$scope.save = function() {
-			save($scope);
+			saveCriteria($scope);
 		}
 		$scope.reset = function() {
 			reset($scope);
@@ -60,7 +60,7 @@ angular.module('klassroom.controllers', [])
 		generateArrangement($scope);
 	}])
 
-	.controller('ContactController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
+	.controller('ContactController', ['$scope', 'saveCriteria', 'init', 'reset', function($scope, saveCriteria, init, reset){
 		init($scope);
 		
 	}])
