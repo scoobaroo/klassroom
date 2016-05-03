@@ -1,13 +1,25 @@
 <div class="container klassroom-logic">
     <h2>Choose your criteria by order of importance</h2>
     <form class="form-horizontal" role="form">
-        <div class="form-group">
-            <label for="c1Name" class="col-sm-2 control-label">Criterium 1</label>
+        
+<!-- showAddCriterium(Criterium), showCriteriumLabel(criterium), addNewCriterium() -->
+
+
+        <!-- remove later, this is the demo from the tutorial -->
+       <!--  <div class="form-group" data-ng-repeat="choice in choices">
+          <label for="choice" ng-show="showChoiceLabel(choice)">Choices</label>
+          <button ng-show="showAddChoice(choice)" ng-click="addNewChoice()">Add another choice</button>
+          <input type="text" ng-model="choice.name" name="" placeholder="Enter a restaurant name">
+        </div> -->
+
+        <div class="form-group" ng-repeat="criterium in criteria">
+            <label for="criterium" ng-show="showCriteriumLabel(criterium)" class="col-sm-2 control-label">Criteria</label>
+            <button ng-show="showAddCriterium(Criterium)" ng-click="addNewCriterium()">Add another criterium</button>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="c1Name" id="c1Name">
+                <input type="text" class="form-control" ng-model="choice.name" placeholder="Academic ability, leadership ability...etc.">
             </div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="c2Name" class="col-sm-2 control-label">Criterium 2</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" ng-model="c2Name" id="c2Name">
@@ -24,7 +36,7 @@
             <div class="col-sm-10">
                 <input type="text" class="form-control" ng-model="c4Name" id="c4Name">
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-2 col-md-offset-8 col-sm-3 col-sm-offset-6 col-xs-6">
                 <button class="btn btn-default btn-block" ng-click="reset()">Reset all</button>

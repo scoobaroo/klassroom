@@ -1,50 +1,74 @@
 'use strict';
 
 /* Services */
-
-
-// Demonstrate how to register services
-// In this case it is a simple value service.
 angular.module('klassroom.services', ['ngCookies']).
   value('version', '0.1').
 
-  
+
+  factory('addNewCriterium', ['$cookieStore', function($cookieStore){
+  	return function($scope) {
+	  //cookie get
+	  var newItemNo = $scope.choices.length+1;
+	  $scope.criterium.push({'id':'choice'+newItemNo});
+	  //cookie save
+	}
+
+  }]).
+
   factory('saveCriteria', ['$cookieStore', '$http', function($cookieStore, $http){
   	return function($scope) {
-		var data = {
-			c1Name: $scope.c1Name,
-			c2Name: $scope.c2Name,
-			c3Name: $scope.c3Name,
-			c4Name: $scope.c4Name
-  		}
 
-  		$http.post('/api/criteria', data).then(successCallback, errorCallback);
 
-  		function successCallback() {
-  			console.log("succeeded!")
-  		}
-  		function errorCallback() {
-  			console.log("FaiL!")
-  		}
+		// put the array in cookie store
+		$cookieStore.put('c1Name', $scope.c1Name);
+		
+
+
+
+		// $cookieStore.put('c1Name', $scope.c1Name);
+		// $cookieStore.put('c2Name', $scope.c2Name);
+		// $cookieStore.put('c3Name', $scope.c3Name);
+		// $cookieStore.put('c4Name', $scope.c4Name);
+  		  		
+  		// why the hell is this api call here.  This was from drunk coding with nick.  
+  		// $http.post('/api/criteria', data).then(successCallback, errorCallback);
+
+  		// function successCallback() {
+  		// 	console.log("succeeded!")
+  		// }
+  		// function errorCallback() {
+  		// 	console.log("FaiL!")
+  		// }
   	}	
   }]).
+
   factory('saveOtherStuff', ['$cookieStore', function($cookieStore){
   	return function($scope) {
 		$cookieStore.put('nbTables', $scope.nbTables);
 		$cookieStore.put('students', $scope.students);
   	}
   }]).
+
   factory('init', ['$cookieStore', function($cookieStore){
   	return function($scope) {
-		$scope.c1Name = $cookieStore.get('c1Name') || 'Academic ability',
-		$scope.c2Name = $cookieStore.get('c2Name') || 'English-speaking level',
-		$scope.c3Name = $cookieStore.get('c3Name') || 'Willingness to help others',
-		$scope.c4Name = $cookieStore.get('c4Name') || 'Another criterium?',
+
+  		$scope.criterium = [{id: 'choice1'}, {id: 'choice2'}, {id: 'choice3'}],
+  		
+
+
+  		// changing the criteria to an array called criteria.
+		// $scope.c1Name = $cookieStore.get('c1Name') || 'Academic ability',
+		// $scope.c2Name = $cookieStore.get('c2Name') || 'English-speaking level',
+		// $scope.c3Name = $cookieStore.get('c3Name') || 'Willingness to help others',
+		// $scope.c4Name = $cookieStore.get('c4Name') || 'Another criterium?',
+
+
 		$scope.nbTables = $cookieStore.get('nbTables') || '',
 		$scope.students = $cookieStore.get('students') || [];
 		$scope.tables = [];
   	}
   }]).
+
   factory('reset', ['saveCriteria', function(save){
   	return function($scope) {
 		if(confirm("You'll have to start over; are you ok with that?")) {
@@ -58,6 +82,7 @@ angular.module('klassroom.services', ['ngCookies']).
 		}
   	}
   }]).
+
   factory('generateArrangement', [ function(save){
   	return function($scope) {
 		$scope.tables = [];

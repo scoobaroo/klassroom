@@ -5,11 +5,11 @@ var bodyParser = require('body-parser');
 var routes = require('./app/routes/index');
 var app = express();
 var db = require("./models");
+pry = require('pryjs');
 
 // view engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public/views'));
-// why would I need to include __dirname in here? 
 app.use(express.static('public'));
 
 app.use(bodyParser.json());
@@ -20,17 +20,6 @@ app.use('/', routes);
 
 
 var port = process.env.PORT || 8000;
-
-// connect to our mongoDB database 
-// (uncomment after you enter in your own credentials in config/db.js)
-// mongoose.connect(db.url); 
-
-// app.run(function($stormpath) {
-// 	$stormpath.uiRouter({
-// 		loginState: 'login', 
-// 		defaultPostLoginState: 'home'
-// 	});
-// });
 
 /****ROUTES***********/
 
