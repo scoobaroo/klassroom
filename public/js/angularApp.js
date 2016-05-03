@@ -6,10 +6,12 @@ var klassroomApp = angular.module('klassroomApp', [
   'ngRoute',
   'klassroom.services',
   'klassroom.controllers', 
-  'ui.router'
+  'ui.router', 
+  'stormpath', 
+  'stormpath.templates'
 ]);
 
-klassroomApp.config(function($stateProvider, $urlRouterProvider) {
+klassroomApp.config(function ($stateProvider, $urlRouterProvider) {
   
   $urlRouterProvider.otherwise('/splash');
   
@@ -17,25 +19,48 @@ klassroomApp.config(function($stateProvider, $urlRouterProvider) {
     // where do i specify which controller controls which partial? 
     .state('splash', {
       url: '/splash', 
-      templateUrl: '/partials/splash.html'
+      templateUrl: '/partials/splash.html', 
+      sp: {
+        authenticate: false
+      }
     })
     .state('criteria', {
       url: '/criteria', 
-      templateUrl: '/partials/criteria.html'
+      templateUrl: '/partials/criteria.html', 
+      sp: {
+        authenticate: true
+      }
     })
     .state('/students', {
       url: '/students', 
-      templateUrl: '/partials/students.html'
+      templateUrl: '/partials/students.html', 
+      sp: {
+        authenticate: true
+      }
     })
     .state('generate', {
       url: '/generate', 
-      templateUrl: '/partials/generate.html'
+      templateUrl: '/partials/generate.html', 
+      sp: {
+        authenticate: true
+      }
     })
     .state('details', {
       url: '/details', 
-      templateUrl: '/partials/details.html'
+      templateUrl: '/partials/details.html', 
+      sp: {
+        authenticate: false
+      }
     })
 });
+
+klassroomApp.run(function ($stormpath) {
+  $stormpath.uiRouter({
+    loginState: 'login',
+    defaultPostLoginState: 'splash'
+  });
+});
+
 
 // $u('/splash', {templateUrl: '/partials/splash.html', controller: 'SplashController'});
   // $urlRouterProvider.when(, {templateUrl: , controller: 'CriteriaController'});

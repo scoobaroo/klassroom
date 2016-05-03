@@ -9,30 +9,15 @@ var db = require("./models");
 // view engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public/views'));
-// why would I need to include __dirname in here? 
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use(express.static('public'));
-
 app.use(bodyParser.json());
-// do i need to change this to be true? 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/', routes);
 
 
-var port = process.env.PORT || 8000;
-
-// connect to our mongoDB database 
-// (uncomment after you enter in your own credentials in config/db.js)
-// mongoose.connect(db.url); 
-
-// app.run(function($stormpath) {
-// 	$stormpath.uiRouter({
-// 		loginState: 'login', 
-// 		defaultPostLoginState: 'home'
-// 	});
-// });
-
-/****ROUTES***********/
+// routes
 
 app.post('/api/criteria', function(req, res){
 	console.log(req.body)
@@ -46,6 +31,7 @@ app.post('/api/criteria', function(req, res){
 	});
 });
 
+var port = process.env.PORT || 8000;
 app.listen(port);
 console.log('The magic is happening on ' + port);
 
