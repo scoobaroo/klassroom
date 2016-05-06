@@ -1,42 +1,65 @@
+
+    
+
+
 <div class="container klassroom-logic">
-    <h2>Choose your criteria by order of importance</h2>
-    <form class="form-horizontal" role="form">
-        
-<!-- showAddCriterium(Criterium), showCriteriumLabel(criterium), addNewCriterium() -->
+    <!-- <h2>Choose your criteria by order of importance</h2> -->
+    <div>
+        <form class="form-horizontal" role="form">
+            <table class="table">
+                <tr>
+                    <th>Order of importance</th>
+                    <th>Criteria</th>
+                    <th>Add</th>
+                </tr>
+                <tr ng-repeat="criterium in criteria">
+                    <td>
+                        CriterNum
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="criteria.id">
+                        <!-- <td><input type="text" ng-model="student.name" ng-change="save()"></td> -->
+                    </td>
+                    <td>
+                        <button class="btn btn-default btn-sm" ng-show="showAddCriteriumButton(criterium)" ng-click="addNewCriteriumToCriteria()">Add</button>
+                        <!-- <button class="btn btn-default btn-sm" ng-click="removeNewCriterium()">&#xfbe;</button> -->
+                    </td>
+                </tr>
+            </table>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-8 col-sm-3 col-sm-offset-6 col-xs-6">
+                    <button class="btn btn-default btn-block" ng-click="reset()">Reset all</button>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-6">
+                    <a class="btn btn-primary btn-block" ng-click="saveCriteria()" href="#/students">Next</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+<!-- /////////////////////////////old stuff -->
 
 
         <!-- remove later, this is the demo from the tutorial -->
-       <!--  <div class="form-group" data-ng-repeat="choice in choices">
+        <!-- <div class="form-group" data-ng-repeat="choice in choices">
           <label for="choice" ng-show="showChoiceLabel(choice)">Choices</label>
           <button ng-show="showAddChoice(choice)" ng-click="addNewChoice()">Add another choice</button>
           <input type="text" ng-model="choice.name" name="" placeholder="Enter a restaurant name">
         </div> -->
-
+    
+<!-- 
+    <form class="form-horizontal" role="form">
+        
         <div class="form-group" ng-repeat="criterium in criteria">
-            <label for="criterium" ng-show="showCriteriumLabel(criterium)" class="col-sm-2 control-label">Criteria</label>
-            <button ng-show="showAddCriterium(Criterium)" ng-click="addNewCriterium()">Add another criterium</button>
+            
+            <label for="criterium" class="col-sm-2 control-label">Criteria</label>
+            <button ng-show="showAddCriterium(criterium)" ng-click="addNewCriterium()">Add another criterium</button>
+
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="choice.name" placeholder="Academic ability, leadership ability...etc.">
+                <input type="text" class="form-control" ng-model="choice.name" placeholder="bla">
             </div>
         </div>
-        <!-- <div class="form-group">
-            <label for="c2Name" class="col-sm-2 control-label">Criterium 2</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="c2Name" id="c2Name">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="c3Name" class="col-sm-2 control-label">Criterium 3</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="c3Name" id="c3Name">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="c4Name" class="col-sm-2 control-label">Criterium 4</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="c4Name" id="c4Name">
-            </div>
-        </div> -->
+        
         <div class="row">
             <div class="col-md-2 col-md-offset-8 col-sm-3 col-sm-offset-6 col-xs-6">
                 <button class="btn btn-default btn-block" ng-click="reset()">Reset all</button>
@@ -45,6 +68,7 @@
                 <a class="btn btn-primary btn-block" ng-click="saveCriteria()" href="#/students">Next</a>
             </div>
         </div>
-    </form>
+    </form> -->
+<!-- /////////////////////////////old stuff -->
 
 </div>
