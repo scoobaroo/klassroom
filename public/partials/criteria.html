@@ -12,16 +12,18 @@
                     <th>Criteria</th>
                     <th>Add</th>
                 </tr>
-                <tr ng-repeat="criterium in criteria">
+                <tr>
                     <td>
                         CriterNum
                     </td>
                     <td>
-                        <input type="text" class="form-control" ng-model="criteria.id">
+                        <input type="text" class="form-control" ng-model="criteria">
                         <!-- <td><input type="text" ng-model="student.name" ng-change="save()"></td> -->
                     </td>
                     <td>
-                        <button class="btn btn-default btn-sm" ng-show="showAddCriteriumButton(criterium)" ng-click="addNewCriteriumToCriteria()">Add</button>
+                        <button class="btn btn-default btn-sm" ng-click="addNewCriteriumToCriteria()">Add</button>
+<!-- ng-show="showAddCriteriumButton(criterium)" add this back to the above <button> block when finished with add criteria function -->
+
                         <!-- <button class="btn btn-default btn-sm" ng-click="removeNewCriterium()">&#xfbe;</button> -->
                     </td>
                 </tr>

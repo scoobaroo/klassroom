@@ -17,10 +17,12 @@ angular.module('klassroom.services', ['ngCookies']).
 		$cookieStore.put('students', $scope.students);
   	}
   }]).
-  // the init function is currently working with the criteria array
+  
   factory('init', ['$cookieStore', function($cookieStore){
   	return function($scope) {
-  		$scope.criteria = [{criteriaName: 'Academic Ability'}],
+  		// init a cookiestore array, first without adding the first element
+  		$scope.criteria = 'Academic Ability',
+  		$cookieStore.put('criteriaArray', [$scope.criteria]), 
 		$scope.nbTables = $cookieStore.get('nbTables') || '',
 		$scope.students = $cookieStore.get('students') || [];
 		$scope.tables = [];

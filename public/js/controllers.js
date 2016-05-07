@@ -12,7 +12,7 @@ angular.module('klassroom.controllers', [])
 		
 
 		init($scope);
-		console.log("criteria after init is: " + $scope.criteria[0].criteriaName)
+		console.log("criteria after init is: " + $scope.criteria)
 
 		$scope.saveCriteria = function() {
 			saveCriteria($scope);
@@ -22,16 +22,20 @@ angular.module('klassroom.controllers', [])
 			reset($scope);
 		};
 
-		$scope.showAddCriteriumButton = function(criterium) {
-		  return criterium.id === $scope.criteria[$scope.criteria.length-1].id;
-		};
+		// $scope.showAddCriteriumButton = function(criterium) {
+		//   return criterium.id === $scope.criteria[$scope.criteria.length-1].id;
+		// };
 
 		$scope.addNewCriteriumToCriteria = function() {
-			// NEXT: look at the syntax for $scope.criteria BELOW.  Compare that syntax to the tutorial pages'
-			// and make it correctly add a new object (new criterion name) to the criteria arr
+			// console.log($scope.criteria); 
+			var array = $cookieStore.get('criteriaArray');
+			array.push($scope.criteria);
+			$cookieStore.put('criteriaArray', array); 
+			
+			var critArr = $cookieStore.get('criteriaArray')
+			console.log("crit arr is:" + critArr);
 
-			$cookieStore.put('criteria', $scope.criteria); 
-			console.log() 		
+					
 
 
 
@@ -40,7 +44,7 @@ angular.module('klassroom.controllers', [])
 		  // $scope.criteria.push({'id':'criteria'+newItemNo});
 		};
 
-		console.log("criteria add init is: " + $scope.criteria[1])
+		
 
 		// $scope.deleteNewCriterium = function() {
 		//   $scope.criteria.splice(index, 1);
