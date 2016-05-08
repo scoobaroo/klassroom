@@ -5,31 +5,24 @@ angular.module('klassroom.services', ['ngCookies']).
   value('version', '0.1').
 
 
-  factory('saveCriteria', ['$cookieStore', '$http', function($cookieStore, $http){
+  factory('save', ['$cookieStore', '$http', function($cookieStore, $http){
   	return function($scope) {
 		$cookieStore.put('criteria', $scope.criteria);  		
-  	}	
-  }]).
-
-  factory('saveOtherStuff', ['$cookieStore', function($cookieStore){
-  	return function($scope) {
 		$cookieStore.put('nbTables', $scope.nbTables);
 		$cookieStore.put('students', $scope.students);
-  	}
+  	}	
   }]).
   
   factory('init', ['$cookieStore', function($cookieStore){
   	return function($scope) {
-  		// init a cookiestore array, first without adding the first element
-  		$scope.criteria = 'Academic Ability',
-  		$cookieStore.put('criteriaArray', [$scope.criteria]), 
-		$scope.nbTables = $cookieStore.get('nbTables') || '',
+		$scope.nbTables = $cookieStore.get('nbTables') || '';
+		$scope.criteria = $cookieStore.get('criteria') || [];
 		$scope.students = $cookieStore.get('students') || [];
 		$scope.tables = [];
   	}
   }]).
 
-  factory('reset', ['saveCriteria', function(save){
+  factory('reset', ['save', function(save){
   	return function($scope) {
 		if(confirm("You'll have to start over; are you ok with that?")) {
 			$scope.students = [];
@@ -38,7 +31,7 @@ angular.module('klassroom.services', ['ngCookies']).
 			$scope.c3Name = '';
 			$scope.c4Name = '';
 			$scope.nbTables = '';
-			saveCriteria($scope);
+			save($scope);
 		}
   	}
   }]).

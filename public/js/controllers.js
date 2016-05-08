@@ -3,19 +3,19 @@
 /* Controllers */
 
 angular.module('klassroom.controllers', [])
-	.controller('SplashController', ['$scope', 'saveCriteria', 'init', 'reset', function($scope, saveCriteria, init, reset){
+	.controller('SplashController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
 	}])
 
 
 
-	.controller('CriteriaController', ['$scope', 'saveCriteria', 'init', 'reset', '$cookieStore', function($scope, saveCriteria, init, reset, $cookieStore){
+	.controller('CriteriaController', ['$scope', 'save', 'init', 'reset', '$cookieStore', function($scope, save, init, reset, $cookieStore){
 		
 
 		init($scope);
-		console.log("criteria after init is: " + $scope.criteria)
+		console.log("criteria after init is: " + JSON.stringify($scope.criteria));
 
-		$scope.saveCriteria = function() {
-			saveCriteria($scope);
+		$scope.save = function() {
+			save($scope);
 		};
 
 		$scope.reset = function() {
@@ -26,37 +26,34 @@ angular.module('klassroom.controllers', [])
 		//   return criterium.id === $scope.criteria[$scope.criteria.length-1].id;
 		// };
 
-		$scope.addNewCriteriumToCriteria = function() {
-			// console.log($scope.criteria); 
-			var array = $cookieStore.get('criteriaArray');
-			array.push($scope.criteria);
-			$cookieStore.put('criteriaArray', array); 
-			
-			var critArr = $cookieStore.get('criteriaArray')
-			console.log("crit arr is:" + critArr);
-
-					
-
-
-
-
-		  // var newItemNo = $scope.criteria.length+1;
-		  // $scope.criteria.push({'id':'criteria'+newItemNo});
+		$scope.addCriterium = function() {
+			if ($scope.newCriteriumName) {
+				$scope.criteria.push({
+					name: $scope.newCriteriumName
+				});
+				$scope.newCriteriumName = "";
+			}
+			$scope.save();
+			var critArr = $cookieStore.get('criteria')
+			console.log("crit arr is:" + JSON.stringify(critArr));
+		};
+	
+		$scope.removeCriterium = function(criterium) {
+		  var index = $scope.criteria.indexOf(criterium);
+		  $scope.criteria.splice(index, 1);
+		  $scope.save();
+		  var critArr = $cookieStore.get('criteria')
+			console.log("crit arr is:" + JSON.stringify(critArr));
 		};
 
-		
-
-		// $scope.deleteNewCriterium = function() {
-		//   $scope.criteria.splice(index, 1);
-		//   $scope.save();
-		// };
-
 	}])
-	.controller('StudentsController', ['$scope', 'saveCriteria', 'init', 'reset', function($scope, saveCriteria, init, reset){
+	.controller('StudentsController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
 		init($scope);
+
 		$scope.save = function() {
-			saveCriteria($scope);
+			save($scope);
 		}
+
 		$scope.reset = function() {
 			reset($scope);
 		}
@@ -68,7 +65,7 @@ angular.module('klassroom.controllers', [])
 				});
 				$scope.newStudentName = '';
 			}
-			$scope.saveCriteria();
+			$scope.save();
 		}
 
 		$scope.removeStudent = function(index) {
@@ -77,11 +74,11 @@ angular.module('klassroom.controllers', [])
 			$scope.save();
 		}
 	}])
-	.controller('GenerateController', ['$scope', 'saveCriteria', 'init', 'reset', 'generateArrangement', function($scope, saveCriteria, init, reset, generateArrangement){
+	.controller('GenerateController', ['$scope', 'save', 'init', 'reset', 'generateArrangement', function($scope, save, init, reset, generateArrangement){
 		init($scope);
 		generateArrangement($scope);
 		$scope.save = function() {
-			saveCriteria($scope);
+			save($scope);
 		}
 		$scope.reset = function() {
 			reset($scope);
@@ -97,7 +94,7 @@ angular.module('klassroom.controllers', [])
 		generateArrangement($scope);
 	}])
 
-	.controller('ContactController', ['$scope', 'saveCriteria', 'init', 'reset', function($scope, saveCriteria, init, reset){
+	.controller('ContactController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
 		init($scope);
 		
 	}])
