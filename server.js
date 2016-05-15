@@ -11,9 +11,7 @@ pry = require('pryjs');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public/views'));
 app.use(express.static('public'));
-
 app.use(bodyParser.json());
-// do i need to change this to be true? 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/', routes);
