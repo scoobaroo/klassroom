@@ -22,10 +22,6 @@ angular.module('klassroom.controllers', [])
 			reset($scope);
 		};
 
-		// $scope.showAddCriteriumButton = function(criterium) {
-		//   return criterium.id === $scope.criteria[$scope.criteria.length-1].id;
-		// };
-
 		$scope.addCriterium = function() {
 			if ($scope.newCriteriumName) {
 				$scope.criteria.push({
@@ -34,16 +30,12 @@ angular.module('klassroom.controllers', [])
 				$scope.newCriteriumName = "";
 			}
 			$scope.save();
-			var critArr = $cookieStore.get('criteria')
-			console.log("crit arr is:" + JSON.stringify(critArr));
 		};
 	
 		$scope.removeCriterium = function(criterium) {
 		  var index = $scope.criteria.indexOf(criterium);
 		  $scope.criteria.splice(index, 1);
 		  $scope.save();
-		  var critArr = $cookieStore.get('criteria')
-			console.log("crit arr is:" + JSON.stringify(critArr));
 		};
 
 	}])

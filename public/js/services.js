@@ -26,10 +26,7 @@ angular.module('klassroom.services', ['ngCookies']).
   	return function($scope) {
 		if(confirm("You'll have to start over; are you ok with that?")) {
 			$scope.students = [];
-			$scope.c1Name = '';
-			$scope.c2Name = '';
-			$scope.c3Name = '';
-			$scope.c4Name = '';
+			$scope.criteria = [];
 			$scope.nbTables = '';
 			save($scope);
 		}
