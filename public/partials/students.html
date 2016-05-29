@@ -25,13 +25,11 @@
                     </th>
                     <th>Delete</th>
                 </tr>
-                <tr ng-repeat="student in students">
+                <tr ng-repeat="student in students"> <!-- first ng-repeat -->
                     <td><input type="text" ng-model="student.name" ng-change="save()"></td>
-                    <td ng-repeat="criterium in criteria">
+                    <td ng-repeat="criterium in criteria"> <!-- second ng-repeat -->
 
-                        <select ng-model="student.criteria[0].value" class="form-control" ng-change="save()">
-                        <!-- What model does this ng-model belong to, thats the question of the hour -->
-
+                        <select ng-model="student.criteria[$index].value" class="form-control" ng-change="save()"> 
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
