@@ -10,10 +10,8 @@ angular.module('klassroom.controllers', [])
 
 	.controller('CriteriaController', ['$scope', 'save', 'init', 'reset', '$cookieStore', function($scope, save, init, reset, $cookieStore){
 		
-
 		init($scope);
-		console.log("criteria after init is: " + JSON.stringify($scope.criteria));
-
+		
 		$scope.save = function() {
 			save($scope);
 		};
@@ -25,7 +23,8 @@ angular.module('klassroom.controllers', [])
 		$scope.addCriterium = function() {
 			if ($scope.newCriteriumName) {
 				$scope.criteria.push({
-					name: $scope.newCriteriumName
+					name: $scope.newCriteriumName,
+					value: ""
 				});
 				$scope.newCriteriumName = "";
 			}
@@ -53,11 +52,20 @@ angular.module('klassroom.controllers', [])
 		$scope.addStudent = function() {
 			if($scope.newStudentName) {
 				$scope.students.push({
-					name: $scope.newStudentName 
+					name: $scope.newStudentName,
+					criteria: $scope.criteria
 				});
 				$scope.newStudentName = '';
 			}
 			$scope.save();
+		}
+
+		console.log($scope.students);
+		
+
+
+		$scope.saveValues = function() {
+			console.log({ name: student.criterium.name, value: student.criterium.value});
 		}
 
 		$scope.removeStudent = function(index) {
@@ -66,6 +74,7 @@ angular.module('klassroom.controllers', [])
 			$scope.save();
 		}
 	}])
+
 	.controller('GenerateController', ['$scope', 'save', 'init', 'reset', 'generateArrangement', function($scope, save, init, reset, generateArrangement){
 		init($scope);
 		generateArrangement($scope);

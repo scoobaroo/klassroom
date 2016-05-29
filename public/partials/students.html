@@ -20,46 +20,25 @@
             <table class="table">
                 <tr>
                     <th>Name</th>
-                    <th>{{c1Name}}</th>
-                    <th>{{c2Name}}</th>
-                    <th>{{c3Name}}</th>
-                    <th>{{c4Name}}</th>
+                    <th ng-repeat="criterium in criteria">
+                        <div> {{ criterium.name }} </div>
+                    </th>
                     <th>Delete</th>
                 </tr>
                 <tr ng-repeat="student in students">
                     <td><input type="text" ng-model="student.name" ng-change="save()"></td>
-                    <td>
-                        <select ng-model="student.c1" class="form-control" ng-change="save()">
+                    <td ng-repeat="criterium in criteria">
+
+                        <select ng-model="student.criteria[0].value" class="form-control" ng-change="save()">
+                        <!-- What model does this ng-model belong to, thats the question of the hour -->
+
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
                     </td>
-                    <td>
-                        <select ng-model="student.c2" class="form-control" ng-change="save()">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select ng-model="student.c3" class="form-control" ng-change="save()">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select ng-model="student.c4" class="form-control" ng-change="save()">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </td>
+                  
                     <td><button class="btn btn-default btn-sm" ng-click="removeStudent($index)">&#xfbe;</button></td>
                 </tr>
             </table>
