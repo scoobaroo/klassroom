@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./app/routes/index');
 var app = express();
-var db = require("./models");
+// var db = require("./models");
 pry = require('pryjs');
 
 // view engine setup
