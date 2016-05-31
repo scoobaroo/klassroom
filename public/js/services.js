@@ -13,12 +13,6 @@ angular.module('klassroom.services', ['ngCookies']).
   	}	
   }]).
 
-  // factory('saveValues', ['$cookieStore', '$http', function($cookieStore, $http){
-  // 	return function($scope) {
-		// $cookieStore.put('criteria', $scope.criteria);  		
-		
-  // 	}	
-  // }]).
   
   factory('init', ['$cookieStore', function($cookieStore){
   	return function($scope) {

@@ -7,7 +7,6 @@ angular.module('klassroom.controllers', [])
 	}])
 
 
-
 	.controller('CriteriaController', ['$scope', 'save', 'init', 'reset', '$cookieStore', function($scope, save, init, reset, $cookieStore){
 		
 		init($scope);
@@ -65,8 +64,16 @@ angular.module('klassroom.controllers', [])
 
 
 		$scope.saveValues = function() {
-			console.log({ name: student.criterium.name, value: student.criterium.value});
+			if($scope.newStudentName) {
+				$scope.students.push({
+					name: $scope.newStudentName,
+					criteria: $scope.criteria
+				});
+				$scope.newStudentName = '';
+			}
+			$scope.save();
 		}
+			
 
 		$scope.removeStudent = function(index) {
 			console.log($scope.students[index]);
