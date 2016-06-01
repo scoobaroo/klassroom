@@ -10,13 +10,13 @@
                 
                     <td> {{ $index + 1 }} </td>
                     <td> {{ criterium.name }} </td>   
-                    <td><button class="btn btn-default btn-sm" ng-click="removeCriterium(criterium)">&#xfbe;</button> </td>
+                    <td><button class="btn btn-default btn-sm" type="button" ng-click="removeCriterium(criterium)">&#xfbe;</button> </td>
                 </tr>
 
                 <tr>
                     <td> <input type="text" class="form-control" ng-model="newCriteriumName"></td>
                     <td></td>
-                    <td><button class="btn btn-default" ng-click="addCriterium()">Add a criterion</button></td>
+                    <td><button class="btn btn-default" type="submit" ng-click="addCriterium()">Add a criterion</button></td>
                 </tr>
             </table>
 
