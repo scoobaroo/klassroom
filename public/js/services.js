@@ -12,7 +12,6 @@ angular.module('klassroom.services', ['ngCookies']).
 		$cookieStore.put('students', $scope.students);
   	}	
   }]).
-
   
   factory('init', ['$cookieStore', function($cookieStore){
   	return function($scope) {
@@ -20,6 +19,7 @@ angular.module('klassroom.services', ['ngCookies']).
 		$scope.criteria = $cookieStore.get('criteria') || [];
 		$scope.students = $cookieStore.get('students') || [];
 		$scope.tables = [];
+		$scope.pageRefreshed = false; 
   	}
   }]).
 
