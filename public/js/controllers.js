@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('klassroom.controllers', [])
-	.controller('SplashController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
+	.controller('HomepageController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
 	}])
 
 

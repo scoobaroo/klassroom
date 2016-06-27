@@ -1,12 +1,27 @@
 /*need to separate this out into different files... terrible separation of concerns!*/
-.jumbotron {
+
+body {
+	font-family: Tahoma;
+	font-size: 62.5%;
+}
+
+.welcome-page {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/class-students.jpg") no-repeat center center fixed; 
     width:100vw;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
     background-size: cover;
-    overflow: hidden !important;
+    overflow: hidden;
+}
 
+.title-container {
+	margin-top: 38vh;
+
+}
+
+.homepage-button-container {
+	text-align: center;
+	margin-top: 10px;
 }
 
 #partial-view {
@@ -27,28 +42,17 @@
 }
 
 .slogan {
-	margin: 130px 40px 20px 0;
 	font-weight: 700;
+	font-size: 10em;
 	text-align: center;
-}
-
-p.sub-slogan {
-	margin: 0 -5px -20px -5px;
-	text-align: center;
-}
-
-p.sub-slogan-2 {
-	margin-top: 40px;
-	text-align: center;
-	font-size: 120%;
-	font-weight: 1000;
+	line-height: .8em;
 }
 
 a.hover:hover { 
     color: #f05f40 !important;
 }
 
-.btn-primary {
+#homepage-button {
 	border-radius: 24px;
     background: -moz-linear-gradient(top,  #33a6cc 50%, #0099cc 50%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#33a6cc), color-stop(50%,#0099cc)); /* Chrome,Safari4+ */
@@ -56,7 +60,7 @@ a.hover:hover {
     background: -o-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* IE10+ */
     background: linear-gradient(to bottom,  #33a6cc 50%,#0099cc 50%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33a6cc', endColorstr='#0099cc',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33a6cc', endColorstr='#0099cc',GradientType=0 ); /* IE6-9 */   
 }
 
 .btn-default {

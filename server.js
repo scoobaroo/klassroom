@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./app/routes/index');
 var app = express();
+/////////////mongoDB for user signin, TD next sprint/////////////////////
 // var db = require("./models");
 pry = require('pryjs');
 
