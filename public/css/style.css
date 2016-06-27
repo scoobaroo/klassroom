@@ -81,6 +81,16 @@ img.showcase-img {
 }
 
 
+#navbar {
+	font-size: 2em;
+}
+
+li {
+	margin-left: 1vw;
+	margin-right: 1vw;
+}
+
+
 .footer {
   margin-top: 20px;	
   position: absolute;
