@@ -8,8 +8,9 @@
 
 ## Technologies Used
 - Node / Express
-- Angular
+- Angular 1.0
 
 ## Getting Started
 - Fork / Clone
 - Run `npm install`
+- Run 'npm start'
