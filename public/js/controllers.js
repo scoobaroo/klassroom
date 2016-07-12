@@ -8,9 +8,9 @@ angular.module('klassroom.controllers', [])
 
 
 	.controller('CriteriaController', ['$scope', 'save', 'init', 'reset', '$cookieStore', function($scope, save, init, reset, $cookieStore){
-		
+
 		init($scope);
-		
+
 		$scope.save = function() {
 			save($scope);
 		};
@@ -29,7 +29,7 @@ angular.module('klassroom.controllers', [])
 			}
 			$scope.save();
 		};
-	
+
 		$scope.removeCriterium = function(criterium) {
 		  var index = $scope.criteria.indexOf(criterium);
 		  $scope.criteria.splice(index, 1);
@@ -60,7 +60,7 @@ angular.module('klassroom.controllers', [])
 		}
 
 		console.log($scope.students);
-		
+
 
 
 		$scope.saveValues = function() {
@@ -73,7 +73,7 @@ angular.module('klassroom.controllers', [])
 			}
 			$scope.save();
 		}
-			
+
 
 		$scope.removeStudent = function(index) {
 			console.log($scope.students[index]);
@@ -104,5 +104,13 @@ angular.module('klassroom.controllers', [])
 
 	.controller('ContactController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
 		init($scope);
-		
+
+
 	}])
+	.controller('LoginCtrl', function($scope, $auth) {
+		$scope.authenticate = function(provider) {
+			$auth.authenticate(provider);
+		};
+		$scope.console.log($scope,$auth);
+		$scope.console.log("inside loginctrl");
+	});

@@ -5,7 +5,8 @@
 angular.module('klassroomApp', [
   'ngRoute',
   'klassroom.services',
-  'klassroom.controllers'
+  'klassroom.controllers',
+  'klassroom.omniauth'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/homepage', {templateUrl: '/partials/homepage.html', controller: 'HomepageController'});
