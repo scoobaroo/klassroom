@@ -3,7 +3,11 @@
 /* Controllers */
 
 angular.module('klassroom.controllers', [])
-	.controller('HomepageController', ['$scope', 'save', 'init', 'reset', function($scope, save, init, reset){
+	.controller('HomepageController', ['$scope', 'save', 'init', 'reset', '$auth', function($scope, save, init, reset, $auth){
+		
+		$scope.authenticate = function(provider) {
+			$auth.authenticate(provider);
+		};
 	}])
 
 
@@ -107,10 +111,3 @@ angular.module('klassroom.controllers', [])
 
 
 	}])
-	.controller('LoginCtrl', function($scope, $auth) {
-		$scope.authenticate = function(provider) {
-			$auth.authenticate(provider);
-		};
-		$scope.console.log($scope,$auth);
-		$scope.console.log("inside loginctrl");
-	});
